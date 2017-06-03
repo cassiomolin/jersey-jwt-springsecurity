@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+authentication:
+  jwt:
+    secret:       secret
+    issuer:       http://example.org
+    audience:     http://example.org
+    clockSkew:    10   # seconds
+    validFor:     3600 # seconds
+    refreshLimit: 1    # times
+    claimNames:
+      authorities:  authorities
+      refreshCount: refreshCount
+      refreshLimit: refreshLimit

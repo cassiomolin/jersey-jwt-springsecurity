@@ -1,0 +1,4 @@
+# IntelliJ IDEA files
+.idea/
+target/
+spring-jersey-jwt.iml
