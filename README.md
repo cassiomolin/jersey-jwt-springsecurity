@@ -45,9 +45,11 @@ To build and run this application, follow these steps:
 
 ## What you will find in this application?
 
-It's a REST API that that currently supports the following operations:
+This application provides a REST API that that currently supports the following operations:
 
 ### Exchange hard credentials for an authentication token
+
+Valid credentials must be sent in the request payload to be exchanged for a token.
 
 ```bash
 curl -X POST \
@@ -60,7 +62,30 @@ curl -X POST \
 }'
 ```
 
+### Get a public greeting
+
+No authentication is required to perform this operation.
+
+```bash
+curl -X GET \
+  http://localhost:8080/api/greetings/public \
+  -H 'Accept: text/plain'
+```
+
+### Get a greeting for the user
+
+Authentication and `USER` role are required to perform this operation.
+
+```bash
+curl -X GET \
+  http://localhost:8080/api/greetings/protected \
+  -H 'Accept: text/plain' \
+  -H 'Authorization: Bearer <authentication-token>'
+```
+
 ### Get all users
+
+Authentication and `ADMIN` role are required to perform this operation.
 
 ```bash
 curl -X GET \
@@ -71,6 +96,8 @@ curl -X GET \
 
 ### Get a user by id
 
+Authentication and `ADMIN` role are required to perform this operation.
+
 ```bash
 curl -X GET \
   http://localhost:8080/api/users/<user-id> \
@@ -78,7 +105,9 @@ curl -X GET \
   -H 'Authorization: Bearer <authentication-token>'
 ```
 
-### Get the authenticated user
+### Get the current user
+
+No authentication is required to perform this operation. However, if the request is performed with a valid token, the server will return details for the current user.
 
 ```bash
 curl -X GET \
@@ -86,6 +115,8 @@ curl -X GET \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer <authentication-token>'
 ```
+
+
 
 [RFC 7519]: https://tools.ietf.org/html/rfc7519
 [jwt.io]: http://jwt.io/
