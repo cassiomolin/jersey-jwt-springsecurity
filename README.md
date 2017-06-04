@@ -128,10 +128,13 @@ curl -X GET \
   -H 'Authorization: Bearer <authentication-token>'
 ```
 
-Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the `postman` directory.
+## Targeting the API with Postman
+
+Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the [`postman`][postman GitHub directory] directory.
 
 
 [RFC 7519]: https://tools.ietf.org/html/rfc7519
 [jwt.io]: http://jwt.io/
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
 [Postman]: https://www.getpostman.com/
+[postman GitHub directory]: https://github.com/cassiomolin/spring-jersey-jwt/tree/master/postman
