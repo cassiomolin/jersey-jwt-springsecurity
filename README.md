@@ -2,7 +2,7 @@
 
 This application intends to demonstrate how to implement token-based authentication with Spring Security and Jersey.
 
-##How token-based authentication works
+## How token-based authentication works
 
 In a token-based authentication, the client exchanges _hard credentials_ (such as username and password) for a piece of data called _token_. Instead of sending the hard credentials in every request, the client will send the token to the server to perform authentication and authorisation.
 
@@ -18,7 +18,7 @@ In a few words, an authentication scheme based on tokens follow these steps:
     2. If the token is invalid, the server refuses the request.
 7. The server can provide an endpoint to refresh tokens.
 
-##Tokens
+## Tokens
 
 A token can be _opaque_ which reveals no details other than the value itself (like a random string) or can be _self-contained_ (like JWT). This example uses JWT.
 
@@ -32,11 +32,11 @@ Your application can provide some functionality to revoke the tokens, but always
 
 When persisting tokens, always consider removing the old ones in order to prevent your database from growing indefinitely.
 
-##What you will find in this application
+## What you will find in this application
 
 Currently, the following operations are supported by this application:
 
-###Exchange hard credentials for an authentication token
+### Exchange hard credentials for an authentication token
 
 ```bash
 curl -X POST \
@@ -49,7 +49,7 @@ curl -X POST \
 }'
 ```
 
-###Get all users
+### Get all users
 
 ```bash
 curl -X GET \
@@ -58,7 +58,7 @@ curl -X GET \
   -H 'Authorization: Bearer <authentication-token>'
 ```
 
-###Get a user by id
+### Get a user by id
 
 ```bash
 curl -X GET \
@@ -67,7 +67,7 @@ curl -X GET \
   -H 'Authorization: Bearer <authentication-token>'
 ```
 
-###Get authenticated user
+### Get authenticated user
 
 ```bash
 curl -X GET \
