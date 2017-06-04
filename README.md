@@ -5,6 +5,7 @@ Example of token-based authentication using:
 * Spring Boot
 * Spring Security
 * Jersey
+* Jackson
 
 ## How token-based authentication works?
 
