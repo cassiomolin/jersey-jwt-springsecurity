@@ -47,7 +47,7 @@ To build and run this application, follow these steps:
 1. Execute the JAR: `java -jar spring-jersey-jwt-1.0.jar`.
 1. The application should be available at `http://localhost:8080/api`.
 
-## What you will find in this application?
+## What will you find in this application?
 
 When the application starts up, the database will be populated with the following users:
 
@@ -57,7 +57,7 @@ When the application starts up, the database will be populated with the followin
  2  | user     | password | true   | USER
  2  | disabled | password | false  | USER
 
-This application provides a REST API that that currently supports the following operations:
+This application provides a REST API that currently supports the following operations:
 
 ### Exchange hard credentials for an authentication token
 
