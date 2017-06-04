@@ -1,6 +1,10 @@
 # spring-jersey-jwt
 
-Example of token-based authentication with Spring Security and Jersey.
+Example of token-based authentication using:
+
+* Spring Boot
+* Spring Security
+* Jersey
 
 ## How token-based authentication works?
 
@@ -44,6 +48,14 @@ To build and run this application, follow these steps:
 1. The application should be available at `http://localhost:8080/api`.
 
 ## What you will find in this application?
+
+When the application starts up, the database will be populated with the following users:
+
+ ID | Username | Password | Active | Roles
+----|--------- |----------|--------|-------------
+ 1  | admin    | password | true   | ADMIN, USER
+ 2  | user     | password | true   | USER
+ 2  | disabled | password | false  | USER
 
 This application provides a REST API that that currently supports the following operations:
 
@@ -116,8 +128,10 @@ curl -X GET \
   -H 'Authorization: Bearer <authentication-token>'
 ```
 
+Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the `postman` directory.
 
 
 [RFC 7519]: https://tools.ietf.org/html/rfc7519
 [jwt.io]: http://jwt.io/
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
+[Postman]: https://www.getpostman.com/
