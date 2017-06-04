@@ -24,9 +24,9 @@ In a few words, an authentication scheme based on tokens follow these steps:
 
 ## What tokens can be like?
 
-A token can be _opaque_ which reveals no details other than the value itself (like a random string) or can be _self-contained_ (like JWT). This example uses JWT.
+A token can be _opaque_ which reveals no details other than the value itself (like a random string) or can be _self-contained_ (like JWT, which is used in this example).
 
-It's a standard method for representing claims securely between two parties, defined in the [RFC 7519][]. JWT is a self-contained token and enables you to store a user identifier, an expiration date and whatever you want (but don't store passwords) in a payload, which is a JSON encoded as Base64. The payload can be read by the client and the integrity of the token can be easily checked by verifying its signature on the server.
+JWT stands for JSON Web Token. It's a standard method for representing claims securely between two parties, defined in the [RFC 7519][]. JWT is a self-contained token and enables you to store a user identifier, an expiration date and whatever you want (but don't store passwords) in a payload, which is a JSON encoded as Base64. The payload can be read by the client and the integrity of the token can be easily checked by verifying its signature on the server.
 
 To find some great resources to work with JWT, have a look at [http://jwt.io][jwt.io].
 
