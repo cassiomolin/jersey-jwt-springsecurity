@@ -1,8 +1,8 @@
+# Token-based authentication with Spring Security and Jersey
+
 [![Build Status](https://travis-ci.org/cassiomolin/spring-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/spring-jersey-jwt)
 
-# spring-jersey-jwt
-
-Example of token-based authentication using:
+This sample application demonstrates how to perform token-based authentication using:
 
 * Spring Boot
 * Spring Security
