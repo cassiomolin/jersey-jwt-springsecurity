@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cassiomolin/spring-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/spring-jersey-jwt)
+
 # spring-jersey-jwt
 
 Example of token-based authentication using:
