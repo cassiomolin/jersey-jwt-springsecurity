@@ -1,6 +1,7 @@
 # Token-based authentication with Spring Security and Jersey
 
 [![Build Status](https://travis-ci.org/cassiomolin/spring-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/spring-jersey-jwt)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/spring-jersey-jwt/master/LICENSE.txt)
 
 This sample application demonstrates how to perform token-based authentication using:
 
