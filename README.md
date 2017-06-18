@@ -1,7 +1,7 @@
 # Token-based authentication with Spring Security and Jersey
 
-[![Build Status](https://travis-ci.org/cassiomolin/spring-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/spring-jersey-jwt)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/spring-jersey-jwt/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/example-springboot-jersey-jwt/master/LICENSE.txt)
 
 This sample application demonstrates how to perform token-based authentication using:
 
@@ -47,8 +47,8 @@ To build and run this application, follow these steps:
 1. Compile the project: `mvn clean compile`.
 1. Package the application: `mvn package`.
 1. Change into the `target` directory: `cd target`
-1. You should see a file with the following or a similar name: `spring-jersey-jwt-1.0.jar`.
-1. Execute the JAR: `java -jar spring-jersey-jwt-1.0.jar`.
+1. You should see a file with the following or a similar name: `springboot-jersey-jwt-1.0.jar`.
+1. Execute the JAR: `java -jar springboot-jersey-jwt-1.0.jar`.
 1. The application should be available at `http://localhost:8080/api`.
 
 ## What will you find in this application?
