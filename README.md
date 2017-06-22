@@ -1,4 +1,4 @@
-# REST API with JWT authentication using Jersey, Spring Security and Spring Boot
+# REST API with JWT authentication using Jersey and Spring Security
 
 [![Build Status](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/example-springboot-jersey-jwt/master/LICENSE.txt)
