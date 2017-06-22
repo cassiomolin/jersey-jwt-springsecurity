@@ -1,4 +1,4 @@
-# Token-based authentication with Spring Security and Jersey
+# Token-based authentication with Jersey and Spring Security
 
 [![Build Status](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/example-springboot-jersey-jwt/master/LICENSE.txt)
