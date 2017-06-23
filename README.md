@@ -13,6 +13,8 @@ This sample application demonstrates how to perform token-based authentication u
 - **Jackson:** JSON parser for Java
 - **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java
 
+For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [`example-undertow-weld-jersey-jwt`][jaxrs-cdi-example] project.
+
 ## How token-based authentication works?
 
 In a token-based authentication, the client exchanges _hard credentials_ (such as username and password) for a piece of data called _token_. Instead of sending the hard credentials in every request, the client will send the token to the server to perform authentication and authorisation.
@@ -145,3 +147,4 @@ Alternatively to cURL, you can use [Postman][] to target the REST API. The Postm
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
 [Postman]: https://www.getpostman.com/
 [postman GitHub directory]: https://github.com/cassiomolin/spring-jersey-jwt/tree/master/postman
+[jaxrs-cdi-example]: https://github.com/cassiomolin/example-undertow-weld-jersey-jwt
