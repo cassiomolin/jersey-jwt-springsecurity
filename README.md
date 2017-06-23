@@ -5,10 +5,13 @@
 
 This sample application demonstrates how to perform token-based authentication using:
 
-* Spring Boot
-* Spring Security
-* Jersey
-* Jackson
+- **Spring Boot:** Framework for creating standalone Java applications
+- **Spring Security:** Framework for authentication and authorization
+- **Spring Data JPA:** Framework for implementing JPA repositories
+- **H2:** In memory relational database
+- **Jersey:** JAX-RS reference implementation for creating RESTful web services in Java
+- **Jackson:** JSON parser for Java
+- **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java
 
 ## How token-based authentication works?
 
