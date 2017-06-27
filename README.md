@@ -58,7 +58,7 @@ To build and run this application, follow these steps:
 
 ## Application overview
 
-Find below a quick description of the main classes of this application:
+Find below a quick description of the most relevant classes of this application:
 
 - [`WebSecurityConfig`](src/main/java/com/cassiomolin/example/api/security/config/WebSecurityConfig.java): Spring Security configuration class.
 
