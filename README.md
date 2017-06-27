@@ -56,6 +56,14 @@ To build and run this application, follow these steps:
 1. Execute the JAR: `java -jar springboot-jersey-jwt-1.0.jar`.
 1. The application should be available at `http://localhost:8080/api`.
 
+When the application starts up, the database will be populated with the following users:
+
+ID | Username | Password | Active | Roles
+---|--------- |----------|--------|------------
+1  | admin    | password | true   | ADMIN, USER
+2  | user     | password | true   | USER
+3  | disabled | password | false  | USER
+
 ## Application overview
 
 Find below a quick description of the most relevant classes of this application:
@@ -73,14 +81,6 @@ Find below a quick description of the most relevant classes of this application:
 - [`JwtAuthenticationEntryPoint`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationEntryPoint.java): [`AuthenticationEntryPoint`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/web/AuthenticationEntryPoint.html) implementation that simply returns error details related to authentication failures.
 
 - [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/api/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
-
-When the application starts up, the database will be populated with the following users:
-
-ID | Username | Password | Active | Roles
----|--------- |----------|--------|------------
-1  | admin    | password | true   | ADMIN, USER
-2  | user     | password | true   | USER
-3  | disabled | password | false  | USER
 
 ## REST API overview
 
