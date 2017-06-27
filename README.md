@@ -43,7 +43,7 @@ JWT allows you to perform stateless authentication, that is, you won't need to p
 
 Your application can provide some functionality to revoke the tokens, but always consider revoking the tokens when the users change their password. When persisting tokens, consider removing the old ones in order to prevent your database from growing indefinitely.
 
-## How to build and run this application?
+## Building and running this application
 
 To build and run this application, follow these steps:
 
@@ -56,15 +56,33 @@ To build and run this application, follow these steps:
 1. Execute the JAR: `java -jar springboot-jersey-jwt-1.0.jar`.
 1. The application should be available at `http://localhost:8080/api`.
 
-## What will you find in this application?
+## Application overview
+
+Find below a quick description of the main classes of this application:
+
+- [`WebSecurityConfig`](src/main/java/com/cassiomolin/example/api/security/config/WebSecurityConfig.java): Spring Security configuration class.
+
+- [`AuthenticationResource`](src/main/java/com/cassiomolin/example/api/resources/AuthenticationResource.java): REST endpoint for exchanging hard credentials for a JWT token.
+
+- [`JwtAuthenticationToken`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationToken.java): [`Authentication`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/Authentication.html) implementation designed for presentation of a JWT token.
+
+- [`JwtAuthenticationTokenFilter`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationTokenFilter.java): [`OncePerRequestFilter`](http://docs.spring.io/autorepo/docs/spring/current/javadoc-api/org/springframework/web/filter/OncePerRequestFilter.html) for extracting the authentication token from the `Authorization` header of the HTTP request.
+
+- [`JwtAuthenticationProvider`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationProvider.java): [`AuthenticationProvider`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/authentication/AuthenticationProvider.html) used to authenticate the JWT token.
+
+- [`JwtAuthenticationEntryPoint`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationEntryPoint.java): [`AuthenticationEntryPoint`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/web/AuthenticationEntryPoint.html) implementation that simply returns error details related to authentication failures.
+
+- [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/api/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
 
 When the application starts up, the database will be populated with the following users:
 
- ID | Username | Password | Active | Roles
-----|--------- |----------|--------|-------------
- 1  | admin    | password | true   | ADMIN, USER
- 2  | user     | password | true   | USER
- 2  | disabled | password | false  | USER
+ID | Username | Password | Active | Roles
+---|--------- |----------|--------|------------
+1  | admin    | password | true   | ADMIN, USER
+2  | user     | password | true   | USER
+3  | disabled | password | false  | USER
+
+## REST API overview
 
 This application provides a REST API that currently supports the following operations:
 
