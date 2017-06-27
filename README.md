@@ -5,13 +5,13 @@
 
 This sample application demonstrates how to perform token-based authentication using:
 
-- **Spring Boot:** Framework for creating standalone Java applications
-- **Spring Security:** Framework for authentication and authorization
-- **Spring Data JPA:** Framework for implementing JPA repositories
-- **H2:** In memory relational database
-- **Jersey:** JAX-RS reference implementation for creating RESTful web services in Java
-- **Jackson:** JSON parser for Java
-- **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java
+- **Spring Boot:** Framework for creating standalone Java applications.
+- **Spring Security:** Framework for authentication and authorization.
+- **Spring Data JPA:** Framework for implementing JPA repositories.
+- **H2:** In memory relational database.
+- **Jersey:** JAX-RS reference implementation for creating RESTful web services in Java.
+- **Jackson:** JSON parser for Java.
+- **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java.
 
 For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [`example-undertow-weld-jersey-jwt`][jaxrs-cdi-example] project.
 
