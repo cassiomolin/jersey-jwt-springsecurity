@@ -1,7 +1,7 @@
 package com.cassiomolin.example.api.resources;
 
-import com.cassiomolin.example.api.resources.AuthenticationResource.AuthenticationToken;
-import com.cassiomolin.example.api.resources.AuthenticationResource.UserCredentials;
+import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
+import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

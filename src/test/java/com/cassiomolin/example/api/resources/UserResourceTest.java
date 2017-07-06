@@ -1,8 +1,8 @@
 package com.cassiomolin.example.api.resources;
 
-import com.cassiomolin.example.api.resources.AuthenticationResource.AuthenticationToken;
-import com.cassiomolin.example.api.resources.AuthenticationResource.UserCredentials;
-import com.cassiomolin.example.api.security.Authority;
+import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
+import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
+import com.cassiomolin.example.security.domain.Authority;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
 
-import static com.cassiomolin.example.api.resources.UserResource.UserQueryDetails;
+import static com.cassiomolin.example.user.api.resource.UserResource.QueryUserResult;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
@@ -67,7 +67,7 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        List<UserQueryDetails> queryDetailsList = response.readEntity(new GenericType<List<UserQueryDetails>>() {
+        List<QueryUserResult> queryDetailsList = response.readEntity(new GenericType<List<QueryUserResult>>() {
         });
         assertNotNull(queryDetailsList);
         assertThat(queryDetailsList, hasSize(3));
@@ -105,7 +105,7 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        UserQueryDetails user = response.readEntity(UserQueryDetails.class);
+        QueryUserResult user = response.readEntity(QueryUserResult.class);
         assertNotNull(user);
         assertEquals(userId, user.getId());
     }
@@ -116,7 +116,7 @@ public class UserResourceTest {
         Response response = client.target(baseUri).path("users").path("me").request().get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        UserQueryDetails user = response.readEntity(UserQueryDetails.class);
+        QueryUserResult user = response.readEntity(QueryUserResult.class);
         assertNull(user.getId());
         assertEquals("anonymousUser", user.getUsername());
         assertThat(user.getAuthorities(), is(empty()));
@@ -131,7 +131,7 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        UserQueryDetails user = response.readEntity(UserQueryDetails.class);
+        QueryUserResult user = response.readEntity(QueryUserResult.class);
         assertNotNull(user.getId());
         assertEquals("user", user.getUsername());
         assertThat(user.getAuthorities(), containsInAnyOrder(Authority.USER));
@@ -146,7 +146,7 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        UserQueryDetails user = response.readEntity(UserQueryDetails.class);
+        QueryUserResult user = response.readEntity(QueryUserResult.class);
         assertNotNull(user.getId());
         assertEquals("admin", user.getUsername());
         assertThat(user.getAuthorities(), containsInAnyOrder(Authority.USER, Authority.ADMIN));

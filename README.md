@@ -80,7 +80,7 @@ Find below a quick description of the most relevant classes of this application:
 
 - [`JwtAuthenticationEntryPoint`](src/main/java/com/cassiomolin/example/api/security/jwt/JwtAuthenticationEntryPoint.java): [`AuthenticationEntryPoint`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/web/AuthenticationEntryPoint.html) implementation that simply returns error details related to authentication failures.
 
-- [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/api/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
+- [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
 
 ## REST API overview
 
