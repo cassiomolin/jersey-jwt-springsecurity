@@ -164,5 +164,5 @@ Alternatively to cURL, you can use [Postman][] to target the REST API. The Postm
 [jwt.io]: http://jwt.io/
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
 [Postman]: https://www.getpostman.com/
-[postman GitHub directory]: https://github.com/cassiomolin/spring-jersey-jwt/tree/master/postman
+[postman GitHub directory]: https://github.com/cassiomolin/spring-jersey-jwt/tree/master/src/main/postman
 [jaxrs-cdi-example]: https://github.com/cassiomolin/example-undertow-weld-jersey-jwt
