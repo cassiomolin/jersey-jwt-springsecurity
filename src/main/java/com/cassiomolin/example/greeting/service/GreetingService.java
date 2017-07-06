@@ -3,7 +3,7 @@ package com.cassiomolin.example.greeting.service;
 import org.springframework.stereotype.Service;
 
 /**
- * Provides service operations for greetings.
+ * Service class that provides operations for greetings.
  *
  * @author cassiomolin
  */

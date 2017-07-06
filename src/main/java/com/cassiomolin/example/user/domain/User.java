@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 /**
- * Persistence model which represents a user.
+ * Persistence model that represents a user.
  *
  * @author cassiomolin
  */

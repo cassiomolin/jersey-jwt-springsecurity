@@ -8,6 +8,5 @@ import com.cassiomolin.example.user.domain.User;
  * @author cassiomolin
  */
 public enum Authority {
-    ADMIN,
-    USER
+    ADMIN, USER
 }

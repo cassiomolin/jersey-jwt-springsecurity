@@ -1,25 +1,25 @@
 package com.cassiomolin.example.security.api.resource;
 
 import com.cassiomolin.example.ApiBaseTest;
-import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
-import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
-import org.junit.Before;
+import com.cassiomolin.example.security.api.model.AuthenticationToken;
+import com.cassiomolin.example.security.api.model.UserCredentials;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.net.URI;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Tests for the authentication resource class.
+ *
+ * @author cassiomolin
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class AuthenticationResourceTest extends ApiBaseTest {

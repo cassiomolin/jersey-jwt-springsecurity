@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
- * Resource class for greeting-related operations.
+ * JAX-RS resource class that provides operations for greetings.
  *
  * @author cassiomolin
  */

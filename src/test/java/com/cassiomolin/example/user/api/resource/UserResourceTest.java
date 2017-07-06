@@ -16,6 +16,11 @@ import java.util.List;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+/**
+ * Tests for the user resource class.
+ *
+ * @author cassiomolin
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserResourceTest extends ApiBaseTest {

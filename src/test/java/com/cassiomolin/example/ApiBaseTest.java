@@ -1,5 +1,7 @@
 package com.cassiomolin.example;
 
+import com.cassiomolin.example.security.api.model.AuthenticationToken;
+import com.cassiomolin.example.security.api.model.UserCredentials;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource;
 import org.junit.Before;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -32,23 +34,23 @@ public class ApiBaseTest {
 
     protected String getTokenForUser() {
 
-        AuthenticationResource.UserCredentials credentials = new AuthenticationResource.UserCredentials();
+        UserCredentials credentials = new UserCredentials();
         credentials.setUsername("user");
         credentials.setPassword("password");
 
-        AuthenticationResource.AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
-                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationResource.AuthenticationToken.class);
+        AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
+                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationToken.class);
         return authenticationToken.getToken();
     }
 
     protected String getTokenForAdmin() {
 
-        AuthenticationResource.UserCredentials credentials = new AuthenticationResource.UserCredentials();
+        UserCredentials credentials = new UserCredentials();
         credentials.setUsername("admin");
         credentials.setPassword("password");
 
-        AuthenticationResource.AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
-                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationResource.AuthenticationToken.class);
+        AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
+                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationToken.class);
         return authenticationToken.getToken();
     }
 

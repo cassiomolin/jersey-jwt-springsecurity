@@ -1,6 +1,8 @@
 package com.cassiomolin.example.security.api.resource;
 
 import com.cassiomolin.example.security.api.AuthenticationTokenDetails;
+import com.cassiomolin.example.security.api.model.AuthenticationToken;
+import com.cassiomolin.example.security.api.model.UserCredentials;
 import com.cassiomolin.example.security.domain.Authority;
 import com.cassiomolin.example.security.service.AuthenticationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Resource class for authentication-related operations.
+ * JAX-RS resource class that provides operations for authentication.
  *
  * @author cassiomolin
  */
@@ -80,46 +82,5 @@ public class AuthenticationResource {
         authenticationToken.setToken(token);
 
         return Response.ok(authenticationToken).build();
-    }
-
-    /**
-     * API model for the authentication token.
-     */
-    public static class AuthenticationToken {
-
-        private String token;
-
-        public String getToken() {
-            return token;
-        }
-
-        public void setToken(String token) {
-            this.token = token;
-        }
-    }
-
-    /**
-     * API model for the user credentials.
-     */
-    public static class UserCredentials {
-
-        private String username;
-        private String password;
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
     }
 }
