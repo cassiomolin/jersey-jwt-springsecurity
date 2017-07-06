@@ -1,4 +1,4 @@
-package com.cassiomolin.example.api.resources;
+package com.cassiomolin.example.greeting.api.resource;
 
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;

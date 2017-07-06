@@ -1,8 +1,9 @@
-package com.cassiomolin.example.api.resources;
+package com.cassiomolin.example.user.api.resource;
 
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
 import com.cassiomolin.example.security.domain.Authority;
+import com.cassiomolin.example.user.api.model.QueryUserResult;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +21,6 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
 
-import static com.cassiomolin.example.user.api.resource.UserResource.QueryUserResult;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
@@ -67,10 +67,9 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        List<QueryUserResult> queryDetailsList = response.readEntity(new GenericType<List<QueryUserResult>>() {
-        });
-        assertNotNull(queryDetailsList);
-        assertThat(queryDetailsList, hasSize(3));
+        List<QueryUserResult> queryResults = response.readEntity(new GenericType<List<QueryUserResult>>() {});
+        assertNotNull(queryResults);
+        assertThat(queryResults, hasSize(3));
     }
 
     @Test
@@ -105,9 +104,9 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        QueryUserResult user = response.readEntity(QueryUserResult.class);
-        assertNotNull(user);
-        assertEquals(userId, user.getId());
+        QueryUserResult queryResults = response.readEntity(QueryUserResult.class);
+        assertNotNull(queryResults);
+        assertEquals(userId, queryResults.getId());
     }
 
     @Test
@@ -116,10 +115,10 @@ public class UserResourceTest {
         Response response = client.target(baseUri).path("users").path("me").request().get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        QueryUserResult user = response.readEntity(QueryUserResult.class);
-        assertNull(user.getId());
-        assertEquals("anonymousUser", user.getUsername());
-        assertThat(user.getAuthorities(), is(empty()));
+        QueryUserResult queryResults = response.readEntity(QueryUserResult.class);
+        assertNull(queryResults.getId());
+        assertEquals("anonymousUser", queryResults.getUsername());
+        assertThat(queryResults.getAuthorities(), is(empty()));
     }
 
     @Test
@@ -131,10 +130,10 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        QueryUserResult user = response.readEntity(QueryUserResult.class);
-        assertNotNull(user.getId());
-        assertEquals("user", user.getUsername());
-        assertThat(user.getAuthorities(), containsInAnyOrder(Authority.USER));
+        QueryUserResult queryResults = response.readEntity(QueryUserResult.class);
+        assertNotNull(queryResults.getId());
+        assertEquals("user", queryResults.getUsername());
+        assertThat(queryResults.getAuthorities(), containsInAnyOrder(Authority.USER));
     }
 
     @Test
@@ -146,10 +145,10 @@ public class UserResourceTest {
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
-        QueryUserResult user = response.readEntity(QueryUserResult.class);
-        assertNotNull(user.getId());
-        assertEquals("admin", user.getUsername());
-        assertThat(user.getAuthorities(), containsInAnyOrder(Authority.USER, Authority.ADMIN));
+        QueryUserResult queryResults = response.readEntity(QueryUserResult.class);
+        assertNotNull(queryResults.getId());
+        assertEquals("admin", queryResults.getUsername());
+        assertThat(queryResults.getAuthorities(), containsInAnyOrder(Authority.USER, Authority.ADMIN));
     }
 
     private String getTokenForUser() {
