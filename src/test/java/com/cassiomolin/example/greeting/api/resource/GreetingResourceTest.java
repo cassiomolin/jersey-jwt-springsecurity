@@ -1,5 +1,6 @@
 package com.cassiomolin.example.greeting.api.resource;
 
+import com.cassiomolin.example.ApiBaseTest;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
 import org.junit.Before;
@@ -21,33 +22,17 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class GreetingResourceTest {
-
-    @LocalServerPort
-    private int port;
-
-    private URI uri;
-
-    private Client client;
-
-    @Before
-    public void setUp() throws Exception {
-        this.uri = new URI("http://localhost:" + port + "/api");
-        this.client = ClientBuilder.newClient();
-    }
-
+public class GreetingResourceTest extends ApiBaseTest {
 
     @Test
     public void getPublicGreetingAsAnonymous() {
-
-        Response response = client.target(uri).path("greetings").path("public").request().get();
+        Response response = client.target(baseUri).path("greetings").path("public").request().get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
     }
 
     @Test
     public void getProtectedGreetingAsAnonymous() {
-
-        Response response = client.target(uri).path("greetings").path("protected").request().get();
+        Response response = client.target(baseUri).path("greetings").path("protected").request().get();
         assertEquals(Response.Status.FORBIDDEN.getStatusCode(), response.getStatus());
     }
 
@@ -56,7 +41,7 @@ public class GreetingResourceTest {
 
         String authorizationHeader = composeAuthorizationHeader(getTokenForAdmin());
 
-        Response response = client.target(uri).path("greetings").path("public").request()
+        Response response = client.target(baseUri).path("greetings").path("public").request()
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
     }
@@ -66,24 +51,8 @@ public class GreetingResourceTest {
 
         String authorizationHeader = composeAuthorizationHeader(getTokenForAdmin());
 
-        Response response = client.target(uri).path("greetings").path("protected").request()
+        Response response = client.target(baseUri).path("greetings").path("protected").request()
                 .header(HttpHeaders.AUTHORIZATION, authorizationHeader).get();
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-    }
-
-
-    private String getTokenForAdmin() {
-
-        UserCredentials credentials = new UserCredentials();
-        credentials.setUsername("admin");
-        credentials.setPassword("password");
-
-        AuthenticationToken authenticationToken = client.target(uri).path("auth").request()
-                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationToken.class);
-        return authenticationToken.getToken();
-    }
-
-    public String composeAuthorizationHeader(String authenticationToken) {
-        return "Bearer" + " " + authenticationToken;
     }
 }

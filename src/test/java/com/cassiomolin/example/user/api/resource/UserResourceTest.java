@@ -1,24 +1,16 @@
 package com.cassiomolin.example.user.api.resource;
 
-import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
-import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
+import com.cassiomolin.example.ApiBaseTest;
 import com.cassiomolin.example.security.domain.Authority;
 import com.cassiomolin.example.user.api.model.QueryUserResult;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.net.URI;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -26,24 +18,10 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class UserResourceTest {
-
-    @LocalServerPort
-    private int port;
-
-    private URI baseUri;
-
-    private Client client;
-
-    @Before
-    public void setUp() throws Exception {
-        this.baseUri = new URI("http://localhost:" + port + "/api");
-        this.client = ClientBuilder.newClient();
-    }
+public class UserResourceTest extends ApiBaseTest {
 
     @Test
     public void getUsersAsAnonymous() {
-
         Response response = client.target(baseUri).path("users").request().get();
         assertEquals(Response.Status.FORBIDDEN.getStatusCode(), response.getStatus());
     }
@@ -149,31 +127,5 @@ public class UserResourceTest {
         assertNotNull(queryResults.getId());
         assertEquals("admin", queryResults.getUsername());
         assertThat(queryResults.getAuthorities(), containsInAnyOrder(Authority.USER, Authority.ADMIN));
-    }
-
-    private String getTokenForUser() {
-
-        UserCredentials credentials = new UserCredentials();
-        credentials.setUsername("user");
-        credentials.setPassword("password");
-
-        AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
-                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationToken.class);
-        return authenticationToken.getToken();
-    }
-
-    private String getTokenForAdmin() {
-
-        UserCredentials credentials = new UserCredentials();
-        credentials.setUsername("admin");
-        credentials.setPassword("password");
-
-        AuthenticationToken authenticationToken = client.target(baseUri).path("auth").request()
-                .post(Entity.entity(credentials, MediaType.APPLICATION_JSON), AuthenticationToken.class);
-        return authenticationToken.getToken();
-    }
-
-    public String composeAuthorizationHeader(String authenticationToken) {
-        return "Bearer" + " " + authenticationToken;
     }
 }

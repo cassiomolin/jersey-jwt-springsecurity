@@ -1,5 +1,6 @@
 package com.cassiomolin.example.security.api.resource;
 
+import com.cassiomolin.example.ApiBaseTest;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.AuthenticationToken;
 import com.cassiomolin.example.security.api.resource.AuthenticationResource.UserCredentials;
 import org.junit.Before;
@@ -21,20 +22,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class AuthenticationResourceTest {
-
-    @LocalServerPort
-    private int port;
-
-    private URI uri;
-
-    private Client client;
-
-    @Before
-    public void setUp() throws Exception {
-        this.uri = new URI("http://localhost:" + port + "/api");
-        this.client = ClientBuilder.newClient();
-    }
+public class AuthenticationResourceTest extends ApiBaseTest {
 
     @Test
     public void authenticateWithValidCredentials() {
@@ -43,7 +31,7 @@ public class AuthenticationResourceTest {
         credentials.setUsername("admin");
         credentials.setPassword("password");
 
-        Response response = client.target(uri).path("auth").request()
+        Response response = client.target(baseUri).path("auth").request()
                 .post(Entity.entity(credentials, MediaType.APPLICATION_JSON));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 
@@ -59,7 +47,7 @@ public class AuthenticationResourceTest {
         credentials.setUsername("invalid-user");
         credentials.setPassword("wrong-password");
 
-        Response response = client.target(uri).path("auth").request()
+        Response response = client.target(baseUri).path("auth").request()
                 .post(Entity.entity(credentials, MediaType.APPLICATION_JSON));
         assertEquals(Response.Status.FORBIDDEN.getStatusCode(), response.getStatus());
     }
