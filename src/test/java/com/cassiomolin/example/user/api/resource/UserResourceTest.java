@@ -1,6 +1,6 @@
 package com.cassiomolin.example.user.api.resource;
 
-import com.cassiomolin.example.ApiBaseTest;
+import com.cassiomolin.example.AbstractApiTest;
 import com.cassiomolin.example.security.domain.Authority;
 import com.cassiomolin.example.user.api.model.QueryUserResult;
 import org.junit.Test;
@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class UserResourceTest extends ApiBaseTest {
+public class UserResourceTest extends AbstractApiTest {
 
     @Test
     public void getUsersAsAnonymous() {

@@ -13,11 +13,11 @@ import javax.ws.rs.core.MediaType;
 import java.net.URI;
 
 /**
- * Base class for API testing.
+ * Base class for REST API testing.
  *
  * @author cassiomolin
  */
-public class ApiBaseTest {
+public abstract class AbstractApiTest {
 
     @LocalServerPort
     protected int port;

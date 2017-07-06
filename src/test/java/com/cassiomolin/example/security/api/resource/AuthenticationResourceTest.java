@@ -1,6 +1,6 @@
 package com.cassiomolin.example.security.api.resource;
 
-import com.cassiomolin.example.ApiBaseTest;
+import com.cassiomolin.example.AbstractApiTest;
 import com.cassiomolin.example.security.api.model.AuthenticationToken;
 import com.cassiomolin.example.security.api.model.UserCredentials;
 import org.junit.Test;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class AuthenticationResourceTest extends ApiBaseTest {
+public class AuthenticationResourceTest extends AbstractApiTest {
 
     @Test
     public void authenticateWithValidCredentials() {

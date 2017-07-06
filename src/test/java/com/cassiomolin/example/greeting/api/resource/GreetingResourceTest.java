@@ -1,6 +1,6 @@
 package com.cassiomolin.example.greeting.api.resource;
 
-import com.cassiomolin.example.ApiBaseTest;
+import com.cassiomolin.example.AbstractApiTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class GreetingResourceTest extends ApiBaseTest {
+public class GreetingResourceTest extends AbstractApiTest {
 
     @Test
     public void getPublicGreetingAsAnonymous() {
