@@ -13,7 +13,7 @@ This sample application demonstrates how to perform token-based authentication u
 - **Jackson:** JSON parser for Java.
 - **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java.
 
-For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [jersey-jwt`][jaxrs-cdi-example`] project.
+For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [`jersey-jwt`][jaxrs-cdi-example`] project.
 
 ## How token-based authentication works?
 
