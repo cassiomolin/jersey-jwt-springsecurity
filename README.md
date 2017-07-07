@@ -1,7 +1,7 @@
 # REST API with JWT authentication using Jersey and Spring Security
 
-[![Build Status](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt.svg?branch=master)](https://travis-ci.org/cassiomolin/example-springboot-jersey-jwt)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/example-springboot-jersey-jwt/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/cassiomolin/jersey-jwt-springsecurity.svg?branch=master)](https://travis-ci.org/cassiomolin/jersey-jwt-springsecurity)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/jersey-jwt-springsecurity/master/LICENSE.txt)
 
 This sample application demonstrates how to perform token-based authentication using:
 
@@ -13,7 +13,7 @@ This sample application demonstrates how to perform token-based authentication u
 - **Jackson:** JSON parser for Java.
 - **JJWT:** Library for creating and parsing JSON Web Tokens (JWTs) in Java.
 
-For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [`example-undertow-weld-jersey-jwt`][jaxrs-cdi-example] project.
+For a CDI and JAX-RS approach _without_ Spring (Boot, Data and Security), have a look at the [jersey-jwt`][jaxrs-cdi-example`] project.
 
 ## How token-based authentication works?
 
@@ -157,12 +157,11 @@ curl -X GET \
 
 ## Targeting the API with Postman
 
-Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the [`postman`][postman GitHub directory] directory.
+Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the [`postman`](src/main/postman) directory.
 
 
 [RFC 7519]: https://tools.ietf.org/html/rfc7519
 [jwt.io]: http://jwt.io/
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
 [Postman]: https://www.getpostman.com/
-[postman GitHub directory]: https://github.com/cassiomolin/spring-jersey-jwt/tree/master/src/main/postman
-[jaxrs-cdi-example]: https://github.com/cassiomolin/example-undertow-weld-jersey-jwt
+[jaxrs-cdi-example]: https://github.com/cassiomolin/jersey-jwt
