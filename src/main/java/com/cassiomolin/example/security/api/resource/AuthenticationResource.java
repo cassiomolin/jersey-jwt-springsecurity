@@ -22,7 +22,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * JAX-RS resource class that provides operations for authentication.
+ * JAX-RS resource class for authentication. Username and password are exchanged for an authentication token.
  *
  * @author cassiomolin
  */

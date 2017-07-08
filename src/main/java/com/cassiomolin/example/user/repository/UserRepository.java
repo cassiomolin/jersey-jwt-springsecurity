@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Provides operations for persisting {@link User}s.
+ * Repository for {@link User}s.
  *
  * @author cassiomolin
  */

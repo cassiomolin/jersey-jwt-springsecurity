@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
- * Data transfer object that holds details about an API error.
+ * API model that represents an error.
  *
  * @author cassiomolin
  */

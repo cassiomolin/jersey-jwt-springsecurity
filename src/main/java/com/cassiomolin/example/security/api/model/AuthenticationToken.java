@@ -1,7 +1,7 @@
 package com.cassiomolin.example.security.api.model;
 
 /**
- * API model for the authentication token.
+ * API model for an authentication token.
  *
  * @author cassiomolin
  */

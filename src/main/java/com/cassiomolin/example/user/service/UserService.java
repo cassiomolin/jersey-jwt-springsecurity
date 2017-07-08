@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Service that provides operations for {@link User}s.
+ * Service for {@link User}s.
  *
  * @author cassiomolin
  */

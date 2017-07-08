@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 /**
- * An {@link org.springframework.security.core.Authentication} implementation that is designed for presentation of a JWT token.
+ * An {@link org.springframework.security.core.Authentication} implementation designed for presentation of a JWT token.
  *
  * @author cassiomolin
  */

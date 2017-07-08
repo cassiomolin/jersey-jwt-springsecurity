@@ -69,6 +69,8 @@ public final class AuthenticatedUserDetails implements UserDetails, CredentialsC
 
     /**
      * Builder for the {@link AuthenticatedUserDetails} class.
+     *
+     * @author cassiomolin
      */
     public static class Builder {
 

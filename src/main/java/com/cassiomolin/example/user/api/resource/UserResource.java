@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 /**
- * Resource class for user-related operations.
+ * JAX-RS resource class for users.
  *
  * @author cassiomolin
  */

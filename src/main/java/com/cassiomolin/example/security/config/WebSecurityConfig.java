@@ -63,18 +63,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                .csrf()
+            .csrf()
                 .disable()
-                .exceptionHandling()
+            .exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)
-                .and()
+            .and()
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
                 .authorizeRequests()
-                .antMatchers("/api/auth", "/api/users/me", "/api/greetings/public").permitAll()
-                .anyRequest().authenticated()
-                .and()
+                    .antMatchers("/api/auth", "/api/users/me", "/api/greetings/public").permitAll()
+                    .anyRequest().authenticated()
+            .and()
                 .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
     }
 }
