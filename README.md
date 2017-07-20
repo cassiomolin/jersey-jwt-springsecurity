@@ -84,7 +84,7 @@ Find below a quick description of the most relevant classes of this application:
 
 ## REST API overview
 
-This application provides a REST API that currently supports the following operations:
+See the [curl][] scripts below with the REST API supported operations:
 
 ### Exchange hard credentials for an authentication token
 
@@ -157,7 +157,7 @@ curl -X GET \
 
 ## Targeting the REST API with Postman
 
-Alternatively to cURL, you can use [Postman][] to target the REST API. The Postman files are available in the [`src/main/postman`](src/main/postman) directory.
+Alternatively to [curl], you can use [Postman][] to target the REST API. The Postman files are available in the [`src/main/postman`](src/main/postman) directory.
 
 
 [RFC 7519]: https://tools.ietf.org/html/rfc7519
@@ -165,3 +165,4 @@ Alternatively to cURL, you can use [Postman][] to target the REST API. The Postm
 [jti claim]: https://tools.ietf.org/html/rfc7519#section-4.1.7
 [Postman]: https://www.getpostman.com/
 [jaxrs-cdi-example]: https://github.com/cassiomolin/jersey-jwt
+[curl]: https://curl.haxx.se/
