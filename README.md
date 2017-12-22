@@ -72,7 +72,7 @@ Find below a quick description of the most relevant classes of this application:
 
 - [`AuthenticationResource`](src/main/java/com/cassiomolin/example/security/api/resource/AuthenticationResource.java): REST endpoint for exchanging hard credentials for a JWT token.
 
-- [`JwtAuthenticationToken`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationToken.java): [`Authentication`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/Authentication.html) implementation designed for presentation of a JWT token.
+- [`JwtAuthenticationToken`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationToken.java): [`Authentication`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/Authentication.html) implementation designed for presentation of a JWT token.
 
 - [`JwtAuthenticationTokenFilter`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationTokenFilter.java): [`OncePerRequestFilter`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/filter/OncePerRequestFilter.html) for extracting the authentication token from the `Authorization` header of the HTTP request.
 
