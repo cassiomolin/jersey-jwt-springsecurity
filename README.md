@@ -74,13 +74,13 @@ Find below a quick description of the most relevant classes of this application:
 
 - [`JwtAuthenticationToken`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationToken.java): [`Authentication`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/Authentication.html) implementation designed for presentation of a JWT token.
 
-- [`JwtAuthenticationTokenFilter`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationTokenFilter.java): [`OncePerRequestFilter`](http://docs.spring.io/autorepo/docs/spring/current/javadoc-api/org/springframework/web/filter/OncePerRequestFilter.html) for extracting the authentication token from the `Authorization` header of the HTTP request.
+- [`JwtAuthenticationTokenFilter`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationTokenFilter.java): [`OncePerRequestFilter`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/filter/OncePerRequestFilter.html) for extracting the authentication token from the `Authorization` header of the HTTP request.
 
-- [`JwtAuthenticationProvider`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationProvider.java): [`AuthenticationProvider`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/authentication/AuthenticationProvider.html) used to authenticate the JWT token.
+- [`JwtAuthenticationProvider`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationProvider.java): [`AuthenticationProvider`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/authentication/AuthenticationProvider.html) used to authenticate the JWT token.
 
-- [`JwtAuthenticationEntryPoint`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationEntryPoint.java): [`AuthenticationEntryPoint`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/web/AuthenticationEntryPoint.html) implementation that simply returns error details related to authentication failures.
+- [`JwtAuthenticationEntryPoint`](src/main/java/com/cassiomolin/example/security/api/jwt/JwtAuthenticationEntryPoint.java): [`AuthenticationEntryPoint`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/AuthenticationEntryPoint.html) implementation that simply returns error details related to authentication failures.
 
-- [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
+- [`DefaultUserDetailsService`](src/main/java/com/cassiomolin/example/security/service/impl/DefaultUserDetailsService.java): [`UserDetailsService`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/userdetails/UserDetailsService.html) implementation.
 
 ## REST API overview
 
